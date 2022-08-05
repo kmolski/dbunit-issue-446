@@ -3,18 +3,12 @@ package pl.kmolski;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import org.dbunit.DataSourceBasedDBTestCase;
-import org.dbunit.JdbcBasedDBTestCase;
 import org.dbunit.database.DatabaseConfig;
-import org.dbunit.database.statement.StatementFactory;
 import org.dbunit.dataset.IDataSet;
-import org.dbunit.dataset.ITable;
 import org.dbunit.dataset.xml.FlatXmlDataSetBuilder;
 import org.dbunit.ext.postgresql.PostgresqlDataTypeFactory;
 
 import javax.sql.DataSource;
-import javax.xml.crypto.Data;
-
-import static org.junit.Assert.assertThrows;
 
 public class DbunitProxyReproTest extends DataSourceBasedDBTestCase {
 
