@@ -31,6 +31,12 @@ public class DbunitProxyReproTest extends DataSourceBasedDBTestCase {
     }
 
     public void testWithHikariDataSource() throws Exception {
+        // throws java.lang.ClassCastException: class com.zaxxer.hikari.pool.HikariProxyConnection cannot be cast to class org.postgresql.PGConnection
+        //
+        // at org.dbunit.ext.postgresql.PostgreSQLOidDataType.setSqlValue(PostgreSQLOidDataType.java:93)
+        // at org.dbunit.database.statement.SimplePreparedStatement.addValue(SimplePreparedStatement.java:78)
+        // at org.dbunit.database.statement.AutomaticPreparedBatchStatement.addValue(AutomaticPreparedBatchStatement.java:63)
+
         IDataSet dataset = getConnection().createDataSet();
         assertEquals(1, dataset.getTable("foo").getRowCount());
     }
